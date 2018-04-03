@@ -1,0 +1,19 @@
+{
+  "name": "devices-down",
+  "version": "1.0.0",
+  "description": "Network for concerned individuals regarding smart phone addiction",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacksondonovan/Devices-Down.git"
+  },
+  "author": "Jackson Donovan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jacksondonovan/Devices-Down/issues"
+  },
+  "homepage": "https://github.com/jacksondonovan/Devices-Down#readme"
+}
