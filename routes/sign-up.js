@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const linkQuery = require('../db/linkQuery')
-
+const bcrypt = require('bcrypt');
 //mounted at /sign-up
 
 router.get('/',(req,res)=>{
@@ -13,22 +13,15 @@ router.post('/new-user',(req,res)=>{
     if(foundUser){
       res.redirect('/')
     } else {
-      linkQuery.addUser(req.body).then(()=>{
+      bcrypt.hash(req.body.password,10).then((hash)=>{
+        var newUser = req.body
+        newUser.password = hash
+        linkQuery.addUser(req.body).then(()=>{
         res.redirect('profile/' + req.body.username)
+        })
       })
     }
   })
 })
-
-// router.post('/prof',(req,res)=>{
-//   linkQuery.getUsers().where('username',req.body.username).first().then((user)=>{
-//     console.log(user);
-//     if(!user){
-//       res.redirect('/')
-//     } else{
-//       res.redirect('/profile/' + req.body.username)
-//     }
-//   })
-// })
 
 module.exports = router;

@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const linkQuery = require('../db/linkQuery');
+const bcrypt = require('bcrypt');
 
 //mounted on /profile
 
@@ -10,8 +11,12 @@ router.post('/',(req,res)=>{
     if(user){
       res.redirect('/')
     } else {
-      linkQuery.addUser(req.body).then((data)=>{
-        res.redirect('/profile/' + req.body.username)
+      bcrypt.hash(req.body.password,10).then((hash)=>{
+        var newUser = req.body
+        newUser.password = hash
+        linkQuery.addUser(req.body).then((data)=>{
+          res.redirect('/profile/' + req.body.username)
+        })
       })
     }
   })
