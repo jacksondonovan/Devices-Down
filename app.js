@@ -1,13 +1,24 @@
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
 const app = express();
 const port = 8080;
 
-app.set('view engine' , 'hbs');
+var signUp = require('./routes/sign-up');
 
-app.use(express.static(path.join(__dirname,'views')));
-app.use(express.static(path.join(__dirname,'public')));
-app.use(express.static(path.join(__dirname,'app')));
+app.set('view engine','hbs')
+app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'app')));
+
+app.use(bodyParser.urlencoded({extended:false}))
+app.use(bodyParser.json())
+
+app.use('/sign-up', signUp);
+
+// app.use(express.static(path.join(__dirname,'views')));
+// app.use(express.static(path.join(__dirname,'public')));
+// app.use(express.static(path.join(__dirname,'app')));
 
 app.get('/',(req,res)=>{
   res.render('index')
