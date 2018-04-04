@@ -5,6 +5,7 @@ const app = express();
 const port = 8080;
 
 var signUp = require('./routes/sign-up');
+var logIn = require('./routes/log-in');
 
 app.set('view engine','hbs')
 app.set('views', path.join(__dirname, 'views'));
@@ -15,6 +16,8 @@ app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
 
 app.use('/sign-up', signUp);
+app.use('/log-in' , logIn);
+
 
 // app.use(express.static(path.join(__dirname,'views')));
 // app.use(express.static(path.join(__dirname,'public')));
