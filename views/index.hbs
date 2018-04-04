@@ -7,9 +7,11 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
   <link rel="stylesheet" href="/stylesheets/index.css">
 </head>
-<body>
+<body ng-app="indexSPA">
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -19,13 +21,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Devices Down</a>
+      <a class="navbar-brand" href="#/home">Devices Down</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li class="active"><a href="#/home">Home</a></li>
+        <li><a href="#/about">About</a></li>
+        <li><a href="#/contact">Contact</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/log-in">Login</a></li>
@@ -34,76 +36,7 @@
   </div>
 </nav>
 
-<div class="jumbotron">
-  <div class="container text-center">
-    <h1>Unplug And Break Free</h1>
-    <br>
-    <p>Join a community of individuals who want to protect themselves and children from the pull of technology.</p>
-  </div>
-  <br>
-  <br>
-  <div class="container text-center">
-    <a style="color:white;" href="/sign-up"><button class="btn btn-primary" type="button">Join Today</button></a>
-  </div>
-</div>
-
-<div class="container-fluid bg-grey">
-  <div class="row">
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-globe logo slideanim"></span>
-    </div>
-    <div class="col-sm-8">
-      <h2>Our Mission</h2><br>
-      <h4>Empower adults with research and knowledge of an ongoing and growing epidemic. By building a community, we can create and share our best advice for helping ween ourselves and our kids off of technology. Join our community of teachers, parents and even kids as we help build a better life and childhood for all.</h4><br>
-
-
-      <p><strong>VISION:</strong>Devices Down is a dedicated to informing everyone on the potential harms of technological over-use. The average American uses their smartphone for 3 hours/day. Up from 2 hours in 2013. We're racing against the clock to build a community that is much needed in our society. Our vision is to help every child have a meaningful and impactful childhood.</p>
-    </div>
-  </div>
-</div>
-
-<div class="row slideanim">
-    <h4 class="text-center">Where it Matters Most</h4>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-off logo-small" align="center"></span>
-      <h4>Driving</h4>
-      <p>Distracted driving has become a real threat in today's age. Stagering stats
-      suggest a large minority of young drivers admit to texting and driving. Adults barely different.</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-heart logo-small"></span>
-      <h4>Dinner</h4>
-      <p>While many families tend to have a phoneless dinner table rule, it can often be broken.
-      Many adults don't even realize when they are using their phones at the table.</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-lock logo-small"></span>
-      <h4>School</h4>
-      <p>Children as young as twelve are developing difficulties in and outside of the class room.
-      Phones provide an escape from focusing on education and important social skill building.</p>
-    </div>
-  </div>
-<div class="container text-center">
-  <h3>Our Community, Your Testimonies</h3><br>
-  <div class="row">
-    <div class="col-sm-5">
-      <h4>"Devices Down helps back up my decisions as a parent. It's like all the books on how to raise your kids
-        got pushed into an crowd sourced community. I check the new postings/advice page every week."
-      </h4>
-      <h5> - Nicole Whittney</h5>
-      <h6 style="color:grey;">PARENT OF TWO</h6>
-    </div>
-    <div class="col-sm-2">
-
-    </div>
-    <div class="col-sm-5">
-      <h4>"I've been waiting for this kind of platform for a long time. Through the years, it's been harder and harder to teach and engage my students. It's nice to share ideas with fellow educators to see what works and what doesn't."
-      </h4>
-      <h5> - Melissa Campbell</h5>
-      <h6 style="color:grey;">MIDDLE SCHOOL TEACHER</h6>
-    </div>
-  </div>
-</div><br>
+<main ng-view></main>
 
 <footer class="container-fluid text-center">
   <div id="contact" class="container-fluid bg-grey">
@@ -133,8 +66,9 @@
     </div>
   </div>
 </div>
-
 </footer>
+
+<script src="/app.indexSPA.js"></script>
 
 </body>
 </html>
