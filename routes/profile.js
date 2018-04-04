@@ -7,7 +7,6 @@ const bcrypt = require('bcrypt');
 
 router.post('/',(req,res)=>{
   linkQuery.getUsers().where('username',req.body.username).first().then((user)=>{
-    console.log(user);
     if(user){
       res.redirect('/')
     } else {
@@ -24,7 +23,6 @@ router.post('/',(req,res)=>{
 
 router.get('/:username',(req,res)=>{
   linkQuery.getUsers().where('username',req.params.username).first().then((data)=>{
-    console.log(data);
     res.render('profile',{thisuser:data})
   })
 })

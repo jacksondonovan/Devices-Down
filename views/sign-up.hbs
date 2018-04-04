@@ -58,19 +58,16 @@
 							</div>
 
 						</div>
-
-					<!-- <div class="form-group">
-						<label>Email Address</label>
-						<input style="width:50%;" name="email" type="text" class="form-control">
-					</div> -->
+            <br>
           <div class="form-group">
 						<label>Username</label>
-						<input style="width:40%;" name="username" type="text" class="form-control" required>
+						<input style="width:40%;" name="username" type="text" class="form-control" pattern=".{5,15}" required>
+            <p style="margin-top:4px;font-size:12px;">Must be between 5 and 15 characters in length.</p>
 					</div>
           <div class="form-group">
 						<label>Password</label>
 						<input style="width:40%;" name="password" type="password" class="form-control" pattern=".{8,20}" required>
-            <p style="margin-top:4px;">Must be between 8 and 20 characters in length.</p>
+            <p style="margin-top:4px;font-size:12px;">Must be between 8 and 20 characters in length.</p>
 					</div>
           <br>
 					<button type="submit" class="btn btn-lg btn-info">Sign Up</button>
