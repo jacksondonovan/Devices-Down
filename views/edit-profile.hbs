@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sign Up</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/sign-css">
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Devices Down</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/profile/{{editthisuser.username}}">Return to Profile</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">Log Out</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <h1 class="well">Edit and Add Details</h1>
+	  <div class="col-lg-12 well">
+	  <div class="row">
+				<form method="post" action="/edit-profile/updated">
+					<div class="col-sm-12">
+						<div class="row">
+              <div class="cen">
+                <input type="hidden" name="username" value="{{editthisuser.username}}">
+              </div>
+							<div class="col-sm-5 form-group">
+								<label>First Name</label>
+								<input type="text" name="first_name" value="{{editthisuser.first_name}}" class="form-control">
+							</div>
+							<div class="col-sm-5 form-group">
+								<label>Last Name</label>
+								<input type="text" name="last_name" value="{{editthisuser.last_name}}" class="form-control">
+							</div>
+              <div class="col-sm-5 form-group">
+								<label>Add a New Bio</label>
+								<textarea type="text" class="form-control" name="bio" value="{{editthisuser.bio}}" rows="4"></textarea>
+							</div>
+              <div class="col-sm-3 form-group">
+								<label>State</label>
+								<input type="text" name="state" value="{{editthisuser.state}}" class="form-control">
+							</div>
+						</div>
+          <br>
+					<button type="submit" class="btn btn-lg btn-info">Update Account</button>
+					</div>
+				</form>
+		</div>
+    <hr>
+    <div class="row">
+      <form class="" action="/edit-profile/delete/{{editthisuser.username}}" method="post">
+        <button style="margin-left:15px;" class="btn btn-danger" type="submit">Delete Account</button>
+      </form>
+    </div>
+	</div>
+	</div>
+  </body>
+</html>
