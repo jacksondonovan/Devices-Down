@@ -44,15 +44,11 @@
         <img src="bird.jpg" class="img-circle" height="65" width="65" alt="Avatar">
       </div>
       <div class="well">
-        <p><a href="#">Interests</a></p>
+        <h5>Bio: </h5>
         <p>
-          <span class="label label-default">News</span>
-          <span class="label label-primary">W3Schools</span>
-          <span class="label label-success">Labels</span>
-          <span class="label label-info">Football</span>
-          <span class="label label-warning">Gaming</span>
-          <span class="label label-danger">Friends</span>
+          {{thisuser.bio}}
         </p>
+        <h6>Others can see your bio when they hover over your photo!</h6>
       </div>
       <div class="alert alert-success fade in">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
@@ -133,11 +129,10 @@
     </div>
     <div class="col-sm-2 well">
       <div class="thumbnail">
-        <p>Upcoming Events:</p>
-        <img src="paris.jpg" alt="Paris" width="400" height="300">
-        <p><strong>Paris</strong></p>
-        <p>Fri. 27 November 2015</p>
-        <button class="btn btn-primary">Info</button>
+        <p>Privacy</p>
+        <span class="glyphicon glyphicon-lock logo-small"></span>
+        <p>Only you can see your profile</p>
+        <a href="/edit-profile/{{thisuser.username}}"><button class="btn btn-primary">Edit Profile</button></a>
       </div>
       <div class="well">
         <p>ADS</p>
