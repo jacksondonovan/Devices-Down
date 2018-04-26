@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>{{thisuser.username}} profile</title>
+  <title>Community Board</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -20,12 +20,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#/home">Devices Down</a>
+      <a class="navbar-brand" href="#">Devices Down</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="">My Profile</a></li>
-        <li><a href="/community-board/{{thisuser.username}}">Community Board</a></li>
+        <li><a href="/profile/{{thisuser.username}}">My Profile</a></li>
+        <li class="active"><a href="">Community Board</a></li>
         <li><a href="">Tech Glossary</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -39,36 +39,38 @@
 <div class="container text-center">
   <div class="row">
     <div class="col-sm-3 well">
-      <div class="well">
-        <p><a href="#">My Profile</a></p>
-        <img src="bird.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+      <h3>New dicussions every week!</h3>
+      <h5>Discover what similar people are thinking on the topic and give your response.</h5>
+      <div class="">
+        <label>Suggest a future topic</label>
+        <input type="text" name="">
       </div>
-      <div class="well">
-        <h5>Bio: </h5>
-        <p>
-          {{thisuser.bio}}
-        </p>
-        <h6>Others can see your bio when they hover over your photo!</h6>
+      <hr>
+      <div class="">
+        <h4>Previous Topics:</h4>
+        <h6>Select one to view the community posts</h6>
       </div>
-      <div class="alert alert-success fade in">
-        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-        <p><strong>Ey!</strong></p>
-        People are looking at your profile. Find out who.
+      <br>
+      <div class="text-center">
+        <ul style="list-style-type:none;">
+          <li>Tech in schools</li>
+          <li>Parenting without phones</li>
+          <li>Something different</li>
+          <li>A totally new one here</li>
+          <li>Tech is fun</li>
+          <li>Too much tablet time in the car?</li>
+        </ul>
       </div>
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
     </div>
     <div class="col-sm-7">
 
       <div class="row">
         <div class="col-sm-12">
           <div class="panel panel-default text-left">
-            <div class="panel-body">
-              <p contenteditable="true">Status: Feeling Blue</p>
-              <button type="button" class="btn btn-default btn-sm">
-                <span class="glyphicon glyphicon-thumbs-up"></span> Like
-              </button>
+            <div class="">
+              <div class="header">
+                <h2>Topic: The right age for the first cell phone?</h2>
+              </div>
             </div>
           </div>
         </div>
@@ -77,13 +79,14 @@
       <div class="row">
         <div class="col-sm-3">
           <div class="well">
-           <p>John</p>
+           <p>{{thisuser.username}}</p>
            <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
           </div>
         </div>
         <div class="col-sm-9">
-          <div class="well">
-            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+          <div class="well" style="display:flex;flex-direction:column;">
+            <label class="text-left">Post publicly and join the discussion!</label>
+            <input type="text" name="" value="">
           </div>
         </div>
       </div>
@@ -128,18 +131,7 @@
       </div>
     </div>
     <div class="col-sm-2 well">
-      <div class="thumbnail">
-        <p>Privacy</p>
-        <span class="glyphicon glyphicon-lock logo-small"></span>
-        <p>Only you can see your profile</p>
-        <a href="/edit-profile/{{thisuser.username}}"><button class="btn btn-primary">Edit Profile</button></a>
-      </div>
-      <div class="well">
-        <p>ADS</p>
-      </div>
-      <div class="well">
-        <p>ADS</p>
-      </div>
+      10 Dollar AD
     </div>
   </div>
 </div>
