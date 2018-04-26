@@ -29,7 +29,43 @@ function addPost(obj){
   var year = dt.getFullYear();
   var completeDate = month + '/' + day + '/' + year;
 
+  function determineWeekNumber(m,d){
+    if(m === 4){
+      return 0;
+    }
+    if(m === 5){
+      if(d <= 6){
+        return 0;
+      }
+      if(d <= 13 && d > 6){
+        return 1;
+      }
+      if(d > 13 && d <= 20){
+        return 2;
+      }
+      if(d > 20){
+        return 3;
+      }
+    }
+    if(m === 6){
+      if(d <= 6){
+        return 4;
+      }
+      if(d > 6 && d <= 13){
+        return 5;
+      }
+      if(d > 13 && d <= 20){
+        return 6;
+      }
+      if(d > 20){
+        return 7;
+      }
+    }
+  }
+  var week = determineWeekNumber(month,day)
+
   obj.date = completeDate;
+  obj.week_number = week;
 
   return knex('posts').insert(obj)
 }
